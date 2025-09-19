@@ -1,0 +1,23 @@
+package org.learn.library.domain.observer;
+
+import org.learn.library.domain.Book;
+import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
+
+public class BookSubject {
+    private final List<BookObserver> observers = new CopyOnWriteArrayList<>();
+
+    public void addObserver(BookObserver observer) {
+        observers.add(observer);
+    }
+
+    public void removeObserver(BookObserver observer) {
+        observers.remove(observer);
+    }
+
+    public void notifyBookLent(Book book) {
+        for (BookObserver observer : observers) {
+            observer.onBookLent(book);
+        }
+    }
+}

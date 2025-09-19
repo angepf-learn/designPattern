@@ -1,4 +1,4 @@
-package org.develcorp.learn.library;
+package org.learn.library;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
